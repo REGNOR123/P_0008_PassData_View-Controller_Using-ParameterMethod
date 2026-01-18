@@ -1,4 +1,6 @@
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Mvc;
 using P_0008_PassData_View_Controller_Using_ParameterMethod.Models;
 
@@ -17,7 +19,18 @@ namespace P_0008_PassData_View_Controller_Using_ParameterMethod.Controllers
         {
             return View();
         }
+        public IActionResult RegistrationForm()
+        {
+            return View();
+        }
+        public IActionResult ShowData(string username, string email, int age)
+        {
+            ViewBag.username = username;
+            ViewBag.email = email;
+            ViewBag.age = age;
+            return View();
 
+        }
         public IActionResult Privacy()
         {
             return View();
